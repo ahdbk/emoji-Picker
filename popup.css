@@ -95,6 +95,8 @@ h2 {
   margin-bottom: 10px;
   overflow-x: auto;
   padding-bottom: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
 }
 
 .tab-btn {
@@ -204,4 +206,49 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
   }
+}
+
+/* Webkit scrollbar styles */
+.tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabs::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.tabs::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-hover);
+}
+
+/* Hide scrollbar when not scrolling */
+.tabs:not(:hover)::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 } 

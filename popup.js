@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
           emojiElement.style.backgroundColor = '';
         }, 200);
+        
+        // Show toast
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
       });
 
       emojiContainer.appendChild(emojiElement);
