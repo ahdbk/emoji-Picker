@@ -43,7 +43,6 @@ h2 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 5px;
-  padding: 10px;
   transition: all 0.3s ease;
   min-height: 200px;
   position: relative;
