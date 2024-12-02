@@ -11,6 +11,6 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["clipboardWrite"],
+  "permissions": ["clipboardWrite", "theme"],
   "host_permissions": ["https://emoji-api.com/*"]
 } 

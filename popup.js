@@ -6,6 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
   let allEmojis = [];
   let currentEmojis = [];
 
+  // Function to handle theme changes
+  function handleThemeChange(e) {
+    if (e.matches) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
+
+  // Listen for theme changes
+  const darkThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  handleThemeChange(darkThemeQuery);
+  darkThemeQuery.addListener(handleThemeChange);
+
   // Function to fetch all emojis
   function fetchAllEmojis() {
     emojiContainer.innerHTML = 'Loading emojis...';
