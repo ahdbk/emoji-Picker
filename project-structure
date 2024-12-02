@@ -1,0 +1,9 @@
+emoji-extension/
+  ├── manifest.json
+  ├── popup.html
+  ├── popup.css
+  ├── popup.js
+  ├── generate-icons.html
+  └── icons/
+      ├── icon48.png
+      └── icon128.png 
