@@ -37,12 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to display emojis
   function displayEmojis(emojis) {
+    // Remove old animation class
+    emojiContainer.classList.remove('emoji-container-slide');
+    
     emojiContainer.innerHTML = '';
     
     if (emojis.length === 0) {
       emojiContainer.innerHTML = 'No emojis found';
       return;
     }
+    
+    // Force reflow
+    void emojiContainer.offsetWidth;
+    
+    // Add animation class
+    emojiContainer.classList.add('emoji-container-slide');
     
     emojis.forEach(emojiData => {
       const emojiElement = document.createElement('div');
@@ -87,6 +96,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click handlers to tabs
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      if (tab.dataset.category === currentCategory) return;
+      
+      // Add click effect
+      tab.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        tab.style.transform = '';
+      }, 100);
+      
       // Update active tab
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
